@@ -12,7 +12,6 @@ def print_recipes_menu():
 def check_recipes(user_ingredients):
     matching_recipes = []
     for recipe in recipes:
-        # Изменение условия проверки: теперь используется 'any' вместо 'all'
         if any(ingredient_keyword.lower() in ingredient.lower() for ingredient_keyword in user_ingredients for ingredient in recipe['ingredients']):
             matching_recipes.append(recipe)
     return matching_recipes
